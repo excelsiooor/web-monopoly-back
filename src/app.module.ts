@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { AuthModule } from './auth/user.module';
+import { UserModule } from './user/user.module';
 import { UserEntity } from './libs/entities/user.entity';
 
 const dotEnvConfig = ConfigModule.forRoot({ envFilePath: '.env' })
@@ -21,7 +21,7 @@ const postgreModule = TypeOrmModule.forRoot({
 })
 
 @Module({
-  imports: [dotEnvConfig, AuthModule, postgreModule],
+  imports: [dotEnvConfig, UserModule, postgreModule],
   controllers: [AppController],
   providers: [AppService],
 })

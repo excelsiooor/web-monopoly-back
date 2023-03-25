@@ -15,4 +15,4 @@ const userRepository = TypeOrmModule.forFeature([UserEntity])
     useClass: AuthService,
   }],
 })
-export class AuthModule {}
+export class UserModule {}
