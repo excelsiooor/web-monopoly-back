@@ -1,13 +1,12 @@
-import { IsString } from "class-validator";
+import { IsString } from 'class-validator'
 
 export class UserDTO {
+  @IsString()
+  displayName: string
 
   @IsString()
-  displayName: string;
+  email: string
 
   @IsString()
-  email: string;
-
-  @IsString()
-  photo: string;
+  photo: string
 }
