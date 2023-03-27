@@ -2,11 +2,11 @@ import { IsString } from 'class-validator'
 
 export class UserDTO {
   @IsString()
-  displayName: string
+  name: string
 
   @IsString()
   email: string
 
   @IsString()
-  photo: string
+  image: string
 }
