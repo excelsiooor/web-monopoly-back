@@ -6,11 +6,11 @@ export class UserEntity {
   id: number
 
   @Column()
-  displayName: string
+  name: string
 
   @Column()
   email: string
 
   @Column()
-  photo: string
+  image: string
 }
