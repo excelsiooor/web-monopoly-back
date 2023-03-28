@@ -6,6 +6,7 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { UserModule } from './user/user.module'
 import { UserEntity } from './libs/entities/user.entity'
+import { RoomsEntity } from './libs/entities/room.entity'
 
 const dotEnvConfig = ConfigModule.forRoot({ envFilePath: '.env' })
 
@@ -16,7 +17,7 @@ const postgreModule = TypeOrmModule.forRoot({
   username: 'root',
   password: 'root',
   database: 'web-monopoly',
-  entities: [UserEntity],
+  entities: [UserEntity, RoomsEntity],
   synchronize: true,
 })
 
