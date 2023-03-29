@@ -23,19 +23,4 @@ export class UserController {
 
     return { ...tokens }
   }
-
-  @Get('rooms/create')
-  async createRoom(@Headers() headers: AuthorizationHeadersDTO) {
-    const { authorization } = headers
-    const accessToken = authorization.split(' ') ? authorization.split(' ')[1] : ''
-
-    const { email } = this.tokenService.verifyToken(accessToken)
-
-    const res = await this.userService.createRoom(email)
-
-    return res
-  }
-
-  @Get('rooms/get')
-  async getRoomById() {}
 }

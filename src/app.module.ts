@@ -7,6 +7,7 @@ import { AppService } from './app.service'
 import { UserModule } from './user/user.module'
 import { UserEntity } from './libs/entities/user.entity'
 import { RoomsEntity } from './libs/entities/room.entity'
+import { RoomsModule } from './rooms/rooms.module'
 
 const dotEnvConfig = ConfigModule.forRoot({ envFilePath: '.env' })
 
@@ -22,7 +23,7 @@ const postgreModule = TypeOrmModule.forRoot({
 })
 
 @Module({
-  imports: [dotEnvConfig, UserModule, postgreModule],
+  imports: [dotEnvConfig, postgreModule, UserModule, RoomsModule],
   controllers: [AppController],
   providers: [AppService],
 })
