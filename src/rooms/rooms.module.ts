@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { JwtModule } from '@nestjs/jwt'
 import { RoomsEntity } from 'src/libs/entities/room.entity'
-import { TokenService } from 'src/user/services/jwt.service'
 import { RoomsService } from './services/rooms.service'
 import { RoomsController } from './rooms.cotroller'
+import { TokenService } from 'src/services/jwt.service'
+import { JwtModule } from '@nestjs/jwt'
 
 const roomsRepository = TypeOrmModule.forFeature([RoomsEntity])
 

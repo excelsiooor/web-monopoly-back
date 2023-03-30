@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Body, Controller, Get, Post, Headers } from '@nestjs/common'
-import { Request } from 'express'
-import { TokenService } from './services/jwt.service'
+import { Body, Controller, Post } from '@nestjs/common'
 import { AuthService } from './services/auth.service'
 import { UserDTO } from './dto/user.dto'
 import { UserService } from './services/user.service'
 import { AuthorizationHeadersDTO } from 'src/libs/dto'
+import { TokenService } from 'src/services/jwt.service'
 
 @Controller('user')
 export class UserController {
@@ -19,8 +18,8 @@ export class UserController {
   async googleLogin(@Body() body: UserDTO) {
     const res = await this.authService.validateUser(body)
 
-    const tokens = this.tokenService.generateTokens(res.email)
+    const tokens = this.tokenService.generateTokens({ email: res.email, id: res.id })
 
-    return { ...tokens }
+    return { ...tokens, user: res }
   }
 }

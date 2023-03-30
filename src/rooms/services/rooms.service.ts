@@ -8,12 +8,12 @@ import { v4 as uuidv4 } from 'uuid'
 export class RoomsService {
   constructor(@InjectRepository(RoomsEntity) private readonly roomsRepository: Repository<RoomsEntity>) {}
 
-  async createRoom(email: string) {
+  async createRoom(userId: number) {
     const generatedId = uuidv4()
 
     const newRoom = this.roomsRepository.create({
       id: generatedId,
-      owner: email,
+      owner: userId,
     })
 
     this.roomsRepository.save(newRoom)

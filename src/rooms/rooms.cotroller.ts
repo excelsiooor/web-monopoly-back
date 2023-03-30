@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Controller, Get, Headers } from '@nestjs/common'
+import { TokenService } from 'src/services/jwt.service'
 import { AuthorizationHeadersDTO } from 'src/libs/dto'
-import { TokenService } from 'src/user/services/jwt.service'
 import { RoomsService } from './services/rooms.service'
 
 @Controller('rooms')
@@ -13,9 +13,9 @@ export class RoomsController {
     const { authorization } = headers
     const accessToken = authorization.split(' ') ? authorization.split(' ')[1] : ''
 
-    const { email } = this.tokenService.verifyToken(accessToken)
+    const { id } = this.tokenService.verifyToken(accessToken)
 
-    const res = await this.roomsService.createRoom(email)
+    const res = await this.roomsService.createRoom(id)
 
     return res
   }

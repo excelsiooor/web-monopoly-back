@@ -3,9 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { UserEntity } from 'src/libs/entities/user.entity'
 import { UserController } from './user.controller'
 import { AuthService } from './services/auth.service'
-import { TokenService } from './services/jwt.service'
-import { JwtModule } from '@nestjs/jwt'
 import { UserService } from './services/user.service'
+import { TokenService } from 'src/services/jwt.service'
+import { JwtModule } from '@nestjs/jwt'
 
 const userRepository = TypeOrmModule.forFeature([UserEntity])
 
