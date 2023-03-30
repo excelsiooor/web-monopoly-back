@@ -2,8 +2,6 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
 import { UserModule } from './user/user.module'
 import { UserEntity } from './libs/entities/user.entity'
 import { RoomsEntity } from './libs/entities/room.entity'
@@ -24,7 +22,5 @@ const postgreModule = TypeOrmModule.forRoot({
 
 @Module({
   imports: [dotEnvConfig, postgreModule, UserModule, RoomsModule],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

@@ -9,5 +9,5 @@ export class RoomsEntity {
   id: string
 
   @Column()
-  owner: string
+  owner: number
 }
