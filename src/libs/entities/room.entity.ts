@@ -1,6 +1,8 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm'
+import { UserEntity } from 'src/libs/entities/user.entity';
+import { Entity, Column, PrimaryColumn, OneToMany, JoinColumn } from 'typeorm'
+import { MessagesEntity } from './messages.entity'
 
-@Entity({ name: 'rooms' })
+@Entity({ name: 'm_room' })
 export class RoomsEntity {
   @PrimaryColumn('uuid', { unique: true })
   id: string
@@ -8,6 +10,10 @@ export class RoomsEntity {
   @Column()
   owner: number
 
-  @Column({ type: 'integer', array: true, default: [], nullable: true })
-  members: number[]
+  @OneToMany(() => UserEntity, user => user.room)
+  users: UserEntity[]
+
+  @OneToMany(() => MessagesEntity, messages => messages.room)
+  messages: MessagesEntity[]
+  
 }

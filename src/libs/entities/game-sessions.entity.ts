@@ -2,7 +2,7 @@ import { Entity, Column, OneToMany, BeforeInsert, PrimaryColumn } from 'typeorm'
 import { FieldSessionsEntity } from './field-sessions.entity'
 import { v4 as uuid } from 'uuid'
 
-@Entity({ name: 'gameSessions' })
+@Entity({ name: 'm_game_sessions' })
 export class GameSessionsEntity {
   @PrimaryColumn('uuid', { unique: true })
   id: string
