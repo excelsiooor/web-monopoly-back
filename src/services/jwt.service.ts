@@ -13,7 +13,6 @@ export class TokenService {
 
   verifyToken(token: string) {
     const verifyedToken = this.jwtService.verify(token)
-    console.log({ verifyedToken })
 
     return { email: verifyedToken.data.email, id: verifyedToken.data.id }
   }

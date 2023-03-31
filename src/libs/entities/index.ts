@@ -1,2 +1,6 @@
 export * from './room.entity'
 export * from './user.entity'
+export * from './messages.entity'
+export * from './field-definitions.entity'
+export * from './field-sessions.entity'
+export * from './game-sessions.entity'
