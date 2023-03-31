@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn,OneToMany, ManyToOne } from 'typeorm'
+import { RoomsEntity } from './room.entity'
 
-@Entity({ name: 'messages' })
+@Entity({ name: 'm_message' })
 export class MessagesEntity {
   @PrimaryGeneratedColumn()
   id: number
@@ -10,7 +11,7 @@ export class MessagesEntity {
 
   @Column()
   create_at: string
-
-  @Column()
-  user_id: number
+  
+  @ManyToOne(() => RoomsEntity, rooms => rooms.messages)
+  room: RoomsEntity;
 }

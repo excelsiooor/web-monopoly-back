@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { RoomsEntity } from './room.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm'
 
-@Entity({ name: 'users' })
+@Entity({ name: 'm_user' })
 export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number
@@ -13,4 +14,7 @@ export class UserEntity {
 
   @Column()
   image: string
+  
+  @ManyToOne(() => RoomsEntity, rooms => rooms.users)
+  room: RoomsEntity;
 }

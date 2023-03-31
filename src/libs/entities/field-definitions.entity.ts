@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity({ name: 'fieldDefinitions' })
+@Entity({ name: 'm_field_definition' })
 export class FieldDefinitionsEntity {
   @PrimaryGeneratedColumn()
   id: number
