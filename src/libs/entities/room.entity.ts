@@ -1,4 +1,4 @@
-import { UserEntity } from 'src/libs/entities/user.entity';
+import { UserEntity } from 'src/libs/entities/user.entity'
 import { Entity, Column, PrimaryColumn, OneToMany, JoinColumn } from 'typeorm'
 import { MessagesEntity } from './messages.entity'
 
@@ -15,5 +15,4 @@ export class RoomsEntity {
 
   @OneToMany(() => MessagesEntity, messages => messages.room)
   messages: MessagesEntity[]
-  
 }
