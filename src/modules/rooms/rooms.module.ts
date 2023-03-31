@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { RoomsEntity } from 'src/libs/entities/room.entity'
-import { RoomsService } from './services/rooms.service'
+import { RoomsService } from './providers/rooms.service'
 import { RoomsController } from './rooms.cotroller'
 import { TokenService } from 'src/services/jwt.service'
 import { JwtModule } from '@nestjs/jwt'

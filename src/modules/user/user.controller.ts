@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Body, Controller, Post } from '@nestjs/common'
-import { AuthService } from './services/auth.service'
+import { AuthService } from './providers/auth.service'
 import { UserDTO } from './dto/user.dto'
-import { UserService } from './services/user.service'
+import { UserService } from './providers/user.service'
 import { AuthorizationHeadersDTO } from 'src/libs/dto'
 import { TokenService } from 'src/services/jwt.service'
 
