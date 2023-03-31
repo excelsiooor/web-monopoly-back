@@ -2,10 +2,9 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { UserModule } from './user/user.module'
 import { UserEntity } from './libs/entities/user.entity'
 import { RoomsEntity } from './libs/entities/room.entity'
-import { RoomsModule } from './rooms/rooms.module'
+import { RoomsModule, UserModule } from './modules'
 
 const dotEnvConfig = ConfigModule.forRoot({ envFilePath: '.env' })
 

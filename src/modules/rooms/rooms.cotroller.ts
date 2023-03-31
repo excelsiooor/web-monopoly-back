@@ -2,7 +2,7 @@
 import { Controller, Get, Headers } from '@nestjs/common'
 import { TokenService } from 'src/services/jwt.service'
 import { AuthorizationHeadersDTO } from 'src/libs/dto'
-import { RoomsService } from './services/rooms.service'
+import { RoomsService } from './providers/rooms.service'
 
 @Controller('rooms')
 export class RoomsController {
